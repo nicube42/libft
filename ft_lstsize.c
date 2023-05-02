@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 22:01:51 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/05/02 13:00:29 by ndiamant         ###   ########.fr       */
+/*   Created: 2023/05/02 13:38:18 by ndiamant          #+#    #+#             */
+/*   Updated: 2023/05/02 13:41:55 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- * Write len bytes of value c (converted to an unsigned char) to the string b.
- * Return b.
-*/
-
-#include <stddef.h>
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	void	*ret;
+	int	i;
 
-	ret = b;
-	while (len--)
-		*(char *)b++ = (unsigned char)c;
-	return (ret);
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }
